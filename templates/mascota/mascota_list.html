@@ -12,17 +12,28 @@
                 <td>Edad</td>
                 <td>Fecha de rescate</td>
                 <td>Adoptante</td>
+                <td>Acciones</td>
             </tr>
         </thead>
         <tbody>
+            {% if mascotas %}
+            {% for mascot in mascotas %}
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{ mascot.folio }}</td>
+                <td>{{ mascot.nombre }}</td>
+                <td>{{ mascot.sexo }}</td>
+                <td>{{ mascot.edad_aproximada }}</td>
+                <td>{{ mascot.fecha_rescate }}</td>
+                <td>{{ mascot.persona.nombre }} {{ mascot.persona.apellidos }}</td>
+                <td>
+                    <a href="{% url 'mascota:editar_mascota' mascot.folio %}" class="btn btn-primary">Editar</a>
+                    <a href="{% url 'mascota:eliminar_mascota' mascot.folio %}" class="btn btn-danger">Eliminar</a>
+                </td>
             </tr>
+            {% endfor %}
+            {% else %}
+            <h2>No hay registros de mascotas</h2>
+            {% endif %}
         </tbody>
     </table>
 {% endblock %}
