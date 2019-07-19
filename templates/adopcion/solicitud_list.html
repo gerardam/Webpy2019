@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+
+{% block titulo %}Solicitudes{% endblock %}
+    
+{% block content %}
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>No. solicitud</td>
+                <td>Adoptante</td>
+                <td>No. mascotas</td>
+                <td>Razones</td>
+                <td>Acciones</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% if object_list %}
+            {% for solicitud in object_list %}
+            <tr>
+                <td>{{ solicitud.id }}</td>
+                <td>{{ solicitud.persona.nombre }} {{ solicitud.persona.apellidos }}</td>
+                <td>{{ solicitud.numero_mascotas }}</td>
+                <td>{{ solicitud.razones }}</td>
+                <td>
+                    <a href="{% url 'adopcion:editar_solicitud' solicitud.id %}" class="btn btn-primary">Editar</a>
+                    <a href="{% url 'adopcion:eliminar_solicitud' solicitud.id %}" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+            {% else %}
+            <h2>No hay registros de mascotas</h2>
+            {% endif %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'base/base.html' %}
+
+{% block titulo %}Formulario solicitud{% endblock %}
+    
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="{{ form2.nombre.name }}">{{ form2.nombre.label }}</label>
+                    {{form2.nombre}}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form2.apellidos.name }}">{{ form2.apellidos.label }}</label>
+                    {{form2.apellidos}}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form2.edad.name }}">{{ form2.edad.label }}</label>
+                    {{form2.edad}}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form2.email.name }}">{{ form2.email.label }}</label>
+                    {{form2.email}}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form2.telefono.name }}">{{ form2.telefono.label }}</label>
+                    {{form2.telefono}}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form2.domicilio.name }}">{{ form2.domicilio.label }}</label>
+                    {{form2.domicilio}}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="{{ form.numero_mascotas.name }}">{{ form.numero_mascotas.label }}</label>
+                    {{form.numero_mascotas}}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.razones.name }}">{{ form.razones.label }}</label>
+                    {{form.razones}}
+                </div>
+                <button class="btn btn-primary" type="submit" style="width: 50%;">Guardar</button>
+                <a href="{% url 'mascota:lista_mascota' %}" class="btn btn-danger" style="width: 49%;">Cancelar</a>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
