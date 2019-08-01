@@ -11,6 +11,7 @@ def index(request):
 class SolicitudList(ListView):
     model = Solicitud
     template_name = 'adopcion/solicitud_list.html'
+    paginate_by = 5
 
 class SolicitudCreate(CreateView):
     model = Solicitud
