@@ -1,15 +1,21 @@
 {% extends 'base/base.html' %}
 
-{% block titulo %}Eliminar mascota{% endblock %}
+{% block titulo %}Eliminar solicitud{% endblock %}
     
 {% block content %}
+<div class="col-md-12">
+    <h3>Eliminar solicitud</h3>
     <form method="POST">
         {% csrf_token %}
-        <head>Quiere eliminar el registro {{ object.persona.nombre }}?</head>
-        <button type="submit" class="btn btn-danger">Eliminar</button>
-        <a href="{% url 'adopcion:lista_solicitud' %}" class="btn btn-default">Cancelar</a>
+        <div class="col-md-6">
+            <div class="form-group">
+                <p>Confirmar la eliminacion del registro de {{ object.persona.nombre }}.</p>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+                <a href="{% url 'adopcion:lista_solicitud' %}" class="btn btn-primary">Cancelar</a>
+            </div>
+        </div>
     </form>
-{% endblock %}
-
-{% block footer %}
+</div>
 {% endblock %}

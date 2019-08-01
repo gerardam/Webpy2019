@@ -3,13 +3,19 @@
 {% block titulo %}Eliminar mascota{% endblock %}
     
 {% block content %}
+<div class="col-md-12">
+    <h3>Eliminar mascota</h3>
     <form method="POST">
         {% csrf_token %}
-        <head>Quiere eliminar el registro {{ object.nombre }}?</head>
-        <button type="submit" class="btn btn-danger">Eliminar</button>
-        <a href="{% url 'mascota:lista_mascota' %}" class="btn btn-default">Cancelar</a>
+        <div class="col-md-6">
+            <div class="form-group">
+                <p>Confirmar la eliminacion del registro {{ object.nombre }}.</p>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+                <a href="{% url 'mascota:lista_mascota' %}" class="btn btn-primary">Cancelar</a>
+            </div>
+        </div>
     </form>
-{% endblock %}
-
-{% block footer %}
+</div>
 {% endblock %}

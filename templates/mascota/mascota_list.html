@@ -3,6 +3,7 @@
 {% block titulo %}Lista de mascotas{% endblock %}
     
 {% block content %}
+<div class="col-md-12">
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -36,6 +37,8 @@
             {% endif %}
         </tbody>
     </table>
+</div>
+<div class="col-md-12">
     <div class="form-group">
         <ul class="pagination pagination-lg">
             <li class="page-item">
@@ -50,7 +53,5 @@
             </li>
         </ul>
     </div>
-{% endblock %}
-
-{% block footer %}
+</div>
 {% endblock %}
