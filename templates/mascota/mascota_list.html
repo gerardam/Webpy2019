@@ -27,8 +27,8 @@
                 <td>{{ mascot.fecha_rescate }}</td>
                 <td>{{ mascot.persona.nombre }} {{ mascot.persona.apellidos }}</td>
                 <td>
-                    <a href="{% url 'mascota:editar_mascota' mascot.folio %}" class="btn btn-primary">Editar</a>
-                    <a href="{% url 'mascota:eliminar_mascota' mascot.folio %}" class="btn btn-danger">Eliminar</a>
+                    <a href="{% url 'mascota:editar_mascota' mascot.folio %}" class="btn btn-primary"><i class="material-icons">create</i></a>
+                    <a href="{% url 'mascota:eliminar_mascota' mascot.folio %}" class="btn btn-danger"><i class="material-icons">clear</i></a>
                 </td>
             </tr>
             {% endfor %}

@@ -7,7 +7,7 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <td>No. solicitud</td>
+                <td>#</td>
                 <td>Adoptante</td>
                 <td>No. mascotas</td>
                 <td>Razones</td>
@@ -23,8 +23,8 @@
                 <td>{{ solicitud.numero_mascotas }}</td>
                 <td>{{ solicitud.razones }}</td>
                 <td>
-                    <a href="{% url 'adopcion:editar_solicitud' solicitud.id %}" class="btn btn-primary">Editar</a>
-                    <a href="{% url 'adopcion:eliminar_solicitud' solicitud.id %}" class="btn btn-danger">Eliminar</a>
+                    <a href="{% url 'adopcion:editar_solicitud' solicitud.id %}" class="btn btn-primary"><i class="material-icons">create</i></a>
+                    <a href="{% url 'adopcion:eliminar_solicitud' solicitud.id %}" class="btn btn-danger"><i class="material-icons">clear</i></a>
                 </td>
             </tr>
             {% endfor %}
