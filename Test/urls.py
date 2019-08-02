@@ -17,13 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth.views import LoginView, logout_then_login
 from django.contrib.auth import views as auth_views
+from django.contrib.auth.decorators import login_required
+from apps.usuario.views import index
 
 urlpatterns = [
+    path('', login_required(index), name='index'),
     path('admin/', admin.site.urls),
     path('mascota/', include(('apps.mascota.urls', 'mascota'))),
     path('adopcion/', include(('apps.adopcion.urls', 'adopcion'))),
     path('usuario/', include(('apps.usuario.urls', 'usuario'))),
-    path('accounts/login/', LoginView.as_view(template_name='index.html'), name="login"),
+    path('accounts/login/', LoginView.as_view(template_name='usuario/login.html'), name="login"),
     path('logout/', logout_then_login, name="logout"),
     path('reset/password_reset', auth_views.PasswordResetView.as_view(template_name='registration/password_reset_form.html'), name='password_reset'),
     path('reset/password_reset_done', auth_views.PasswordResetDoneView.as_view(template_name='registration/password_reset_done.html'), name='password_reset_done'),

@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+
+{% block titulo %}Adopciones{% endblock %}
+    
+{% block content %}
+<div class="col-md-12">
+    <h3>Contenido</h3>
+    <div class="col-md-6">
+        <div class="list-group">
+            <a href="{% url 'adopcion:lista_solicitud' %}" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Lista de adopciones</h5>
+                <small><i class="material-icons">launch</i></small>
+                </div>
+                <p class="mb-1">Lista de solicitudes de adopcion.</p>
+            </a>
+            <a href="{% url 'adopcion:crear_solicitud' %}" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Registrar solicitud</h5>
+                <small><i class="material-icons">launch</i></small>
+                </div>
+                <p class="mb-1">Registrar una solicitud de adopcion.</p>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

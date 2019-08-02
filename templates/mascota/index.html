@@ -3,9 +3,25 @@
 {% block titulo %}Mascota{% endblock %}
     
 {% block content %}
-
-{% endblock %}
-
-{% block footer %}
-
+<div class="col-md-12">
+    <h3>Contenido</h3>
+    <div class="col-md-6">
+        <div class="list-group">
+            <a href="{% url 'mascota:lista_mascota' %}" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Lista de mascotas</h5>
+                <small><i class="material-icons">launch</i></small>
+                </div>
+                <p class="mb-1">Lista de las mascotas para adoptar.</p>
+            </a>
+            <a href="{% url 'mascota:crear_mascota' %}" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Registrar mascota</h5>
+                <small class="text-muted"><i class="material-icons">launch</i></small>
+                </div>
+                <p class="mb-1">Registrar una mascota para ser adoptada.</p>
+            </a>
+        </div>
+    </div>
+</div>
 {% endblock %}

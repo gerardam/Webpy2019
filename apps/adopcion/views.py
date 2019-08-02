@@ -6,7 +6,7 @@ from apps.adopcion.models import Persona, Solicitud
 from apps.adopcion.forms import PersonaForm, SolicitudForm
 
 def index(request):
-    return HttpResponse('Pagina principal de adopcion')
+    return render(request, 'adopcion/index.html')
 
 class SolicitudList(ListView):
     model = Solicitud

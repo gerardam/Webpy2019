@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
@@ -7,6 +8,9 @@ from apps.usuario.forms import RegistroForm
 from rest_framework.views import APIView
 from apps.usuario.serializers import UserSerializer
 import json
+
+def index(request):
+    return render(request, 'index.html')
 
 class RegistroUsuario(CreateView):
     model = User
